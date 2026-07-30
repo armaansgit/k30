@@ -76,20 +76,19 @@ def get_title(text):
 
 
 def find_posts():
-    """Find all .md source files."""
+    """Find all .md source files. Prefix filenames with 01-, 02- etc to control order."""
     posts = []
     if not SRC.exists():
         return posts
     for item in sorted(SRC.iterdir()):
         if item.suffix == ".md":
-            # flat file: src/my-post.md
-            slug = item.stem
+            slug = re.sub(r'^\d+-', '', item.stem)  # strip number prefix
             posts.append((slug, item, item.parent))
         elif item.is_dir():
-            # folder: src/my-post/index.md
             md = item / "index.md"
             if md.exists():
-                posts.append((item.name, md, item))
+                slug = re.sub(r'^\d+-', '', item.name)  # strip number prefix
+                posts.append((slug, md, item))
     return posts
 
 
@@ -177,8 +176,7 @@ def main():
         posts.append((slug, title, mtime))
         print(f"  built: {slug}")
 
-    # sort by modification time, oldest first (post #1 = first post)
-    posts.sort(key=lambda x: x[2])
+    # order is controlled by filename prefixes (01-, 02-, etc.)
 
     # build index pages
     build_posts_index(posts)
