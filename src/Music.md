@@ -1,4 +1,7 @@
 # Music or No music?
 
-While working no music especially 20th century.
-Classical may work
+No music while working, especially 20th-century music. 
+Classical may work.
+
+June (2026) - 2000-0000
+
