@@ -6,5 +6,5 @@ One of the best ways to seek peace is to step away from all the distractions (we
 
 It was always about what’s *important* versus what’s **more important**.
 
-July (2026) - Afternoon Watch
+July (2026) - 1200–1600
 
