@@ -1,6 +1,6 @@
 # A Flaw
 
-This post is about a flaw in me that I am trying to understand and fix.
+*This post is about a flaw in me that I am trying to understand and fix.*
 
 ![pushups](pushups.png)
 
