@@ -21,7 +21,8 @@ html {
 body {
     font: 1em/var(--lh) monospace;
     padding: 16vh 2em 0;
-    background: #f2f2f2;
+    background: #fff;
+    color: #111;
     display: grid;
     grid: 1fr / minmax(auto, 64ch);
     justify-content: center;
@@ -35,7 +36,7 @@ a {
     margin-left: -.16666em;
 }
 
-a i { border-bottom: 1px dotted; font-style: italic }
+a i { font-style: italic }
 a:active i { border: none }
 
 footer { padding: calc(var(--lh) * 2) 0 8vh }
