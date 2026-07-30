@@ -177,8 +177,8 @@ def main():
         posts.append((slug, title, mtime))
         print(f"  built: {slug}")
 
-    # sort by modification time, newest first
-    posts.sort(key=lambda x: x[2], reverse=True)
+    # sort by modification time, oldest first (post #1 = first post)
+    posts.sort(key=lambda x: x[2])
 
     # build index pages
     build_posts_index(posts)
