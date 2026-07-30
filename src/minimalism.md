@@ -8,3 +8,4 @@ True minimalism is about surviving with what you already have, whether it is an 
 
 That is what **minimalism** truly means.
 
+July (2026) - 1800-2200
