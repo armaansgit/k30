@@ -18,3 +18,5 @@ I don't chase goals. I chase proof.
 Growing up, I was always told I was weak and couldn't even do pushups. Maybe that's why this was never about fitness. I just wanted to prove that I could.
 The moment I proved it to myself, I completely lost interest.
 That is something I am trying to understand and fix.
+
+July (2026) - 1800-2000
