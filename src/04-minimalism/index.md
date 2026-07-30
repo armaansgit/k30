@@ -11,3 +11,5 @@ That is what **minimalism** truly means.
 July (2026) - 1800-2200
 
 ![Terry Davis](terry-davis.jpeg)
+
+~ Terry Davis
