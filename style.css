@@ -31,16 +31,17 @@ body {
 }
 
 #home-container {
-    display: flex;
-    gap: 4em;
-    align-items: center;
+    position: relative;
+    display: block;
 }
 #home-image {
-    width: 300px;
-    height: 300px;
+    position: absolute;
+    right: calc(100% + 3em);
+    top: 0;
+    width: 180px;
+    height: 180px;
     background-size: cover;
     background-position: center;
-    flex-shrink: 0;
 }
 
 a {
@@ -80,9 +81,12 @@ tr:nth-child(n) { background: none }
 tr td:last-child { padding: 0 }
 
 @media (max-device-width: 800px) {
-    #home-container {
-        flex-direction: column;
-        align-items: flex-start;
+    #home-image {
+        position: relative;
+        right: auto;
+        margin-bottom: 2em;
+        width: 180px;
+        height: 180px;
     }
     body { 
         padding-top: 2em; 
