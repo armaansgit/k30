@@ -28,7 +28,7 @@ KATEX_HEAD = (
 )
 
 
-def template(title, content, back, use_katex=True):
+def template(title, content, back, use_katex=True, body_class=""):
     katex = f"\n    {KATEX_HEAD}" if use_katex else ""
     v = int(time.time())
     return f"""<!DOCTYPE html>
@@ -39,7 +39,7 @@ def template(title, content, back, use_katex=True):
     <title>{title}</title>
     <link rel="stylesheet" href="/style.css?v={v}">{katex}
 </head>
-<body>
+<body class="{body_class}">
     <main>
 {content}
     </main>
@@ -224,7 +224,7 @@ def build_homepage(posts):
         footer_links.append('<a href="/posts/"><i>v</i></a>')
     footer_links.append('<a href="/info/"><i>Info</i></a>')
 
-    page = template(SITE_TITLE, content, "/", use_katex=False)
+    page = template(SITE_TITLE, content, "/", use_katex=False, body_class="home")
     # custom footer for homepage
     footer_html = "\n        ".join(footer_links)
     page = page.replace(

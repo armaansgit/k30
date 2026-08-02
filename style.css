@@ -35,6 +35,23 @@ body {
     min-height: 100vh;
 }
 
+body.home {
+    padding: 0 2em;
+    align-content: center;
+}
+
+body.home #clock-container {
+    position: fixed;
+    bottom: 2em;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 0;
+}
+
+body.home footer {
+    padding: calc(var(--lh) * 2) 0 0;
+}
+
 #home-container {
     display: flex;
     gap: 2.5em;
@@ -42,8 +59,8 @@ body {
 }
 
 #home-image {
-    width: 15em;
-    height: 15em;
+    width: 16em;
+    height: 16em;
     background-size: cover;
     background-position: center;
     flex-shrink: 0;
