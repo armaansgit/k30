@@ -4,9 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Burnout</title>
-    <link rel="stylesheet" href="/style.css?v=1785663643">
+    <link rel="stylesheet" href="/style.css?v=1785664381">
 </head>
 <body>
+    <div id="side-pattern"></div>
     <main>
         <h1><em>Burnout</em></h1>
 <p>Suckssssssssssssssssssssssssssssss</p>
@@ -44,6 +45,13 @@
                 "Look in the mirror. Does the person looking back respect you? Be honest."
             ]
         };
+        
+        const patterns = ['mor_0233.jpg', 'mor_0413.jpg', 'mor_0414.jpg', 'mor_0411.jpg'];
+        const randomPattern = patterns[Math.floor(Math.random() * patterns.length)];
+        const sidePatternEl = document.getElementById('side-pattern');
+        if (sidePatternEl) {
+            sidePatternEl.style.backgroundImage = "url('/" + randomPattern + "')";
+        }
         
         let lastHour = -1;
         let currentQuote = '';

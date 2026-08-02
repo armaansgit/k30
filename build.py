@@ -40,6 +40,7 @@ def template(title, content, back, use_katex=True):
     <link rel="stylesheet" href="/style.css?v={v}">{katex}
 </head>
 <body>
+    <div id="side-pattern"></div>
     <main>
 {content}
     </main>
@@ -75,6 +76,13 @@ def template(title, content, back, use_katex=True):
                 "Look in the mirror. Does the person looking back respect you? Be honest."
             ]
         }};
+        
+        const patterns = ['mor_0233.jpg', 'mor_0413.jpg', 'mor_0414.jpg', 'mor_0411.jpg'];
+        const randomPattern = patterns[Math.floor(Math.random() * patterns.length)];
+        const sidePatternEl = document.getElementById('side-pattern');
+        if (sidePatternEl) {{
+            sidePatternEl.style.backgroundImage = "url('/" + randomPattern + "')";
+        }}
         
         let lastHour = -1;
         let currentQuote = '';

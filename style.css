@@ -18,14 +18,15 @@ html {
     height: 100%;
 }
 
-html::before {
-    content: "";
+#side-pattern {
     position: fixed;
     top: 0;
     left: 0;
     width: 40%;
     height: 100vh;
-    background: url('/ira_0607.jpg') center/cover;
+    background-size: cover;
+    background-position: center;
+    border-right: 1px solid #ddd;
 }
 
 body {
@@ -79,11 +80,13 @@ tr:nth-child(n) { background: none }
 tr td:last-child { padding: 0 }
 
 @media (max-device-width: 800px) {
-    html::before {
+    #side-pattern {
         position: relative;
         display: block;
         width: 100%;
         height: 35vh;
+        border-right: none;
+        border-bottom: 1px solid #ddd;
     }
     body { 
         padding-top: 2em; 
