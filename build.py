@@ -203,7 +203,7 @@ def build_posts_index(posts):
 
 def build_homepage(posts):
     """Generate index.html with recent posts."""
-    recent = posts[:6]  # show 6 most recent on homepage
+    recent = posts[:7]  # show 7 most recent on homepage
     total = len(posts)
     links = "\n".join(
         f'        <a href="/posts/{slug}/">{total - i}. <i>{title}</i></a>' for i, (slug, title, _) in enumerate(recent)

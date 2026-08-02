@@ -8,9 +8,14 @@
     box-sizing: border-box;
 }
 
-::selection { background: #ddd; color: #000 }
+::selection {
+    background: #ddd;
+    color: #000
+}
 
-:root { --lh: 1.5em }
+:root {
+    --lh: 1.5em
+}
 
 html {
     margin: 0 0 0 calc(100vw - 100%);
@@ -32,16 +37,18 @@ body {
 
 #home-container {
     display: flex;
-    gap: 3em;
+    gap: 2.5em;
     align-items: flex-start;
 }
+
 #home-image {
-    width: 12em;
-    height: 12em;
+    width: 15em;
+    height: 15em;
     background-size: cover;
     background-position: center;
     flex-shrink: 0;
 }
+
 #home-container a {
     display: block;
     width: fit-content;
@@ -54,10 +61,17 @@ a {
     margin-left: -.16666em;
 }
 
-a i { font-style: italic }
-a:active i { border: none }
+a i {
+    font-style: italic
+}
 
-footer { padding: calc(var(--lh) * 2) 0 8vh }
+a:active i {
+    border: none
+}
+
+footer {
+    padding: calc(var(--lh) * 2) 0 8vh
+}
 
 #clock-container {
     margin-top: 25vh;
@@ -66,22 +80,64 @@ footer { padding: calc(var(--lh) * 2) 0 8vh }
     color: #888;
 }
 
-strong, b { font-weight: bold }
-em, i { font-style: italic }
-main > a { display: block; width: fit-content }
+strong,
+b {
+    font-weight: bold
+}
 
-h1, p { margin-bottom: var(--lh); }
+em,
+i {
+    font-style: italic
+}
 
-img { max-width: 100%; height: auto; margin: var(--lh) 0; }
+main>a {
+    display: block;
+    width: fit-content
+}
 
-code { background: #e5e5e5; padding: .1em .3em; }
-pre code { display: block; padding: 1em; overflow-x: auto; margin: var(--lh) 0; }
-table { border: none; margin-top: -.16666em }
+h1,
+p {
+    margin-bottom: var(--lh);
+}
 
-td:first-child { padding: 0 }
-td { padding: 0 3em }
-tr:nth-child(n) { background: none }
-tr td:last-child { padding: 0 }
+img {
+    max-width: 100%;
+    height: auto;
+    margin: var(--lh) 0;
+}
+
+code {
+    background: #e5e5e5;
+    padding: .1em .3em;
+}
+
+pre code {
+    display: block;
+    padding: 1em;
+    overflow-x: auto;
+    margin: var(--lh) 0;
+}
+
+table {
+    border: none;
+    margin-top: -.16666em
+}
+
+td:first-child {
+    padding: 0
+}
+
+td {
+    padding: 0 3em
+}
+
+tr:nth-child(n) {
+    background: none
+}
+
+tr td:last-child {
+    padding: 0
+}
 
 @media (max-device-width: 800px) {
     #home-container {
@@ -89,14 +145,22 @@ tr td:last-child { padding: 0 }
         align-items: flex-start;
         gap: 1.5em;
     }
+
     #home-image {
         width: 12em;
         height: 12em;
     }
-    body { 
-        padding-top: 2em; 
+
+    body {
+        padding-top: 2em;
         justify-content: start;
     }
-    footer { padding: 2em 0 }
-    a i { border-color: #888 }
+
+    footer {
+        padding: 2em 0
+    }
+
+    a i {
+        border-color: #888
+    }
 }
