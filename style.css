@@ -42,6 +42,13 @@ a:active i { border: none }
 
 footer { padding: calc(var(--lh) * 2) 0 8vh }
 
+#clock-container {
+    margin-top: 5em;
+    text-align: center;
+    font-size: 0.85em;
+    color: #888;
+}
+
 strong, b { font-weight: bold }
 em, i { font-style: italic }
 main > a { display: block; width: fit-content }

@@ -45,7 +45,26 @@ def template(title, content, back, use_katex=True):
     </main>
     <footer>
         <a href="{back}"><i>../</i></a>
+        <div id="clock-container"></div>
     </footer>
+    <script>
+        function updateClock() {{
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString('en-US');
+            const h = now.getHours();
+            let msg = '';
+            if (h < 5) msg = "Motherfuckers are sleeping. Are you getting ahead or wasting time? Go to sleep.";
+            else if (h < 12) msg = "You're already behind. Stop hitting snooze on your life. Get after it.";
+            else if (h < 14) msg = "Lunch breaks don't pay the rent. Fuel up and get back to the grind.";
+            else if (h < 18) msg = "This is when the weak start looking at the clock. Stay hard. Push through.";
+            else msg = "The day isn't over just because it's dark outside. What else can you conquer today?";
+            
+            const el = document.getElementById('clock-container');
+            if (el) el.innerText = timeStr + " — " + msg;
+        }}
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 </body>
 </html>"""
 
