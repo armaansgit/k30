@@ -44,7 +44,7 @@ def template(title, content, back, use_katex=True):
 {content}
     </main>
     <footer>
-        <a href="{back}">← back</a>
+        <a href="{back}"><i>../</i></a>
     </footer>
 </body>
 </html>"""
@@ -152,8 +152,8 @@ def build_homepage(posts):
 
     footer_links = []
     if posts:
-        footer_links.append('<a href="/posts/">archive</a>')
-    footer_links.append('<a href="/info/">info</a>')
+        footer_links.append('<a href="/posts/"><i>v</i></a>')
+    footer_links.append('<a href="/info/"><i>Info</i></a>')
 
     page = template(SITE_TITLE, content, "/", use_katex=False)
     # custom footer for homepage
