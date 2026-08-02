@@ -18,6 +18,16 @@ html {
     height: 100%;
 }
 
+html::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100vh;
+    background: url('/ira_0607.jpg') center/cover;
+}
+
 body {
     font: 1em/var(--lh) monospace;
     padding: 16vh 2em 0;
@@ -28,6 +38,8 @@ body {
     align-content: start;
     justify-content: center;
     min-height: 100vh;
+    margin-left: 40%;
+    width: 60%;
 }
 
 a {
@@ -66,8 +78,19 @@ td { padding: 0 3em }
 tr:nth-child(n) { background: none }
 tr td:last-child { padding: 0 }
 
-@media (max-device-width: 600px) {
-    body { padding-top: 2em; justify-content: start }
+@media (max-device-width: 800px) {
+    html::before {
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 35vh;
+    }
+    body { 
+        padding-top: 2em; 
+        justify-content: start;
+        margin-left: 0;
+        width: 100%;
+    }
     footer { padding: 2em 0 }
     a i { border-color: #888 }
 }
