@@ -4,18 +4,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>🍁</title>
-    <link rel="stylesheet" href="/style.css?v=1785664381">
+    <link rel="stylesheet" href="/style.css?v=1785665082">
 </head>
 <body>
-    <div id="side-pattern"></div>
     <main>
-        <h1>🍁</h1>
+<div id="home-container">
+            <div id="home-image"></div>
+            <div>
+                <h1>🍁</h1>
         <a href="/posts/Burnout/">11. <i>Burnout</i></a>
         <a href="/posts/shorttermorlongterm/">10. <i>Short term or Long term?</i></a>
         <a href="/posts/Life/">9. <i>Life</i></a>
         <a href="/posts/patience/">8. <i>Patience</i></a>
         <a href="/posts/smartwork/">7. <i>Smart work</i></a>
         <a href="/posts/Things to keep private/">6. <i>Things to keep private</i></a>
+            </div>
+        </div>
     </main>
     <footer>
         <a href="/posts/"><i>v</i></a>
@@ -51,9 +55,9 @@
             ]
         };
         
-        const patterns = ['mor_0233.jpg', 'mor_0413.jpg', 'mor_0414.jpg', 'mor_0411.jpg'];
+        const patterns = ['mor_0503.jpg', 'mor_0702.jpg'];
         const randomPattern = patterns[Math.floor(Math.random() * patterns.length)];
-        const sidePatternEl = document.getElementById('side-pattern');
+        const sidePatternEl = document.getElementById('home-image');
         if (sidePatternEl) {
             sidePatternEl.style.backgroundImage = "url('/" + randomPattern + "')";
         }

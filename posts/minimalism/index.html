@@ -4,10 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Minimalism</title>
-    <link rel="stylesheet" href="/style.css?v=1785664381">
+    <link rel="stylesheet" href="/style.css?v=1785665082">
 </head>
 <body>
-    <div id="side-pattern"></div>
     <main>
         <h1><em>Minimalism</em></h1>
 <p>In 2026, minimalism often refers to high end products. Everything is expected to be sleek, lightweight, rich in texture, and expensive.</p>
@@ -51,9 +50,9 @@
             ]
         };
         
-        const patterns = ['mor_0233.jpg', 'mor_0413.jpg', 'mor_0414.jpg', 'mor_0411.jpg'];
+        const patterns = ['mor_0503.jpg', 'mor_0702.jpg'];
         const randomPattern = patterns[Math.floor(Math.random() * patterns.length)];
-        const sidePatternEl = document.getElementById('side-pattern');
+        const sidePatternEl = document.getElementById('home-image');
         if (sidePatternEl) {
             sidePatternEl.style.backgroundImage = "url('/" + randomPattern + "')";
         }

@@ -40,7 +40,6 @@ def template(title, content, back, use_katex=True):
     <link rel="stylesheet" href="/style.css?v={v}">{katex}
 </head>
 <body>
-    <div id="side-pattern"></div>
     <main>
 {content}
     </main>
@@ -77,9 +76,9 @@ def template(title, content, back, use_katex=True):
             ]
         }};
         
-        const patterns = ['mor_0233.jpg', 'mor_0413.jpg', 'mor_0414.jpg', 'mor_0411.jpg'];
+        const patterns = ['mor_0503.jpg', 'mor_0702.jpg'];
         const randomPattern = patterns[Math.floor(Math.random() * patterns.length)];
-        const sidePatternEl = document.getElementById('side-pattern');
+        const sidePatternEl = document.getElementById('home-image');
         if (sidePatternEl) {{
             sidePatternEl.style.backgroundImage = "url('/" + randomPattern + "')";
         }}
@@ -210,7 +209,13 @@ def build_homepage(posts):
         f'        <a href="/posts/{slug}/">{total - i}. <i>{title}</i></a>' for i, (slug, title, _) in enumerate(recent)
     )
     if links:
-        content = f"        <h1>{SITE_TITLE}</h1>\n{links}"
+        content = f"""<div id="home-container">
+            <div id="home-image"></div>
+            <div>
+                <h1>{SITE_TITLE}</h1>
+{links}
+            </div>
+        </div>"""
     else:
         content = f"        <h1>{SITE_TITLE}</h1>"
 
