@@ -128,8 +128,9 @@ def build_post(slug, md_path, src_dir):
 
 def build_posts_index(posts):
     """Generate posts/index.html."""
+    total = len(posts)
     links = "\n".join(
-        f'        <a href="/posts/{slug}/">{i}. <i>{title}</i></a>' for i, (slug, title, _) in enumerate(posts, 1)
+        f'        <a href="/posts/{slug}/">{total - i}. <i>{title}</i></a>' for i, (slug, title, _) in enumerate(posts)
     )
     content = f"        <h1>Posts</h1>\n{links}"
     page = template("Posts", content, "/", use_katex=False)
@@ -138,10 +139,11 @@ def build_posts_index(posts):
 
 
 def build_homepage(posts):
-    """Generate index.html with all posts."""
-    recent = posts  # show all posts on homepage
+    """Generate index.html with recent posts."""
+    recent = posts[:6]  # show 6 most recent on homepage
+    total = len(posts)
     links = "\n".join(
-        f'        <a href="/posts/{slug}/">{i}. <i>{title}</i></a>' for i, (slug, title, _) in enumerate(recent, 1)
+        f'        <a href="/posts/{slug}/">{total - i}. <i>{title}</i></a>' for i, (slug, title, _) in enumerate(recent)
     )
     if links:
         content = f"        <h1>{SITE_TITLE}</h1>\n{links}"
@@ -177,6 +179,8 @@ def main():
         print(f"  built: {slug}")
 
     # order is controlled by filename prefixes (01-, 02-, etc.)
+    # we want newest (highest prefix) first, so we reverse it
+    posts.reverse()
 
     # build index pages
     build_posts_index(posts)
