@@ -76,7 +76,7 @@ def template(title, content, back, use_katex=True, body_class=""):
             ]
         }};
         
-        const patterns = ['mor_0503.jpg', 'mor_0702.jpg', 'mor_0233.jpg', 'mor_0413.jpg', 'mor_0414.jpg', 'mor_0411.jpg'];
+        const patterns = ['mor_0503.jpg', 'mor_0702.jpg', 'mor_0233.jpg', 'mor_0413.jpg', 'mor_0414.jpg', 'mor_0411.jpg', 'mor_1208.jpg', 'mor_1114.jpg', 'mor_0912.jpg', 'ind_0215.jpg', 'ind_0235.jpg', 'ind_0417.jpg', 'ind_0415.jpg'];
         const randomPattern = patterns[Math.floor(Math.random() * patterns.length)];
         const sidePatternEl = document.getElementById('home-image');
         if (sidePatternEl) {{
