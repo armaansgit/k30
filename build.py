@@ -296,7 +296,7 @@ def build_kreads_indexes(books):
         
     # 2. Build root kreads index (listing books)
     links = "\n".join(
-        f'        <a href="/info/kreads/{book_slug}/">> <i>{book_slug}</i></a><br>' for book_slug in books.keys()
+        f'        <a href="/info/kreads/{book_slug}/"><i>{book_slug}</i></a><br>' for book_slug in books.keys()
     )
     content = f"        <h1>kreads</h1>\n        <p>-</p>\n{links}"
     page = template("kreads", content, "/info/", use_katex=False)
