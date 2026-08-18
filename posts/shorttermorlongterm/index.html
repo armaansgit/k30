@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Short term or Long term?</title>
-    <link rel="stylesheet" href="/style.css?v=1786032194">
+    <link rel="stylesheet" href="/style.css?v=1787064394">
 </head>
 <body class="">
     <main>
@@ -17,34 +17,6 @@
         <div id="clock-container"></div>
     </footer>
     <script>
-        const quotes = {
-            late: [
-                "Another day burned. Are you closer to your dream, or just closer to the grave?",
-                "You are running out of time on this earth. Why are you wasting tonight?",
-                "They sleep because they earned it. You're awake because you're terrified of being average. Act like it."
-            ],
-            morning: [
-                "You woke up. Congratulations. Now prove you deserve to be breathing.",
-                "Are you going to waste another 24 hours lying to yourself about your potential?",
-                "Someone out there is working right now with half your talent and twice your discipline."
-            ],
-            noon: [
-                "Half the day is gone. If you died today, would you be proud of what you left behind?",
-                "Comfort is killing you slowly. Are you feeding your stomach or your purpose?",
-                "Stop negotiating with your weakness. Do the fucking work."
-            ],
-            afternoon: [
-                "You want to quit because you're tired. That's why no one will remember your name.",
-                "Watching the clock doesn't change the fact that you're underperforming.",
-                "Is this the maximum effort of your life? Pathetic. Dig deeper."
-            ],
-            evening: [
-                "The day is ending, but your mediocrity remains. Fix it.",
-                "Did you earn the right to sleep tonight, or did you just survive another day?",
-                "Look in the mirror. Does the person looking back respect you? Be honest."
-            ]
-        };
-        
         const patterns = ['mor_0503.jpg', 'mor_0702.jpg', 'mor_0233.jpg', 'mor_0413.jpg', 'mor_0414.jpg', 'mor_0411.jpg', 'mor_1208.jpg', 'mor_1114.jpg', 'mor_0912.jpg', 'ind_0215.jpg', 'ind_0235.jpg', 'ind_0417.jpg', 'ind_0415.jpg'];
         const randomPattern = patterns[Math.floor(Math.random() * patterns.length)];
         const sidePatternEl = document.getElementById('home-image');
@@ -52,28 +24,10 @@
             sidePatternEl.style.backgroundImage = "url('/" + randomPattern + "')";
         }
         
-        let lastHour = -1;
-        let currentQuote = '';
-        
         function updateClock() {
-            const now = new Date();
-            const h = now.getHours();
-            
-            if (h !== lastHour) {
-                let pool = [];
-                if (h < 5) pool = quotes.late;
-                else if (h < 12) pool = quotes.morning;
-                else if (h < 14) pool = quotes.noon;
-                else if (h < 18) pool = quotes.afternoon;
-                else pool = quotes.evening;
-                
-                currentQuote = pool[Math.floor(Math.random() * pool.length)];
-                lastHour = h;
-            }
-            
-            const timeStr = now.toLocaleTimeString('en-US');
+            const timeStr = new Date().toLocaleTimeString('en-US');
             const el = document.getElementById('clock-container');
-            if (el) el.innerText = timeStr + " — " + currentQuote;
+            if (el) el.innerText = timeStr;
         }
         setInterval(updateClock, 1000);
         updateClock();

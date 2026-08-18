@@ -24,7 +24,7 @@ html {
 }
 
 body {
-    font: 1em/var(--lh) monospace;
+    font: 1em/var(--lh) 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
     padding: 16vh 2em 0;
     background: #fff;
     color: #111;
