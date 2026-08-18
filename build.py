@@ -20,7 +20,8 @@ SRC = ROOT / "src"
 POSTS_DIR = ROOT / "posts"
 KREADS_SRC = ROOT / "src" / "kreads"
 INFO_KREADS_DIR = ROOT / "info" / "kreads"
-SITE_TITLE = "🍁"
+SITE_TITLE = '<img src="/maple_leaf.png" alt="Maple leaf" style="height:1.2em;vertical-align:middle">'
+SITE_TITLE_TEXT = "🍁"
 
 KATEX_HEAD = (
     '<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">\n'
@@ -180,7 +181,7 @@ def build_homepage(posts):
         footer_links.append('<a href="/posts/"><i>v</i></a>')
     footer_links.append('<a href="/info/"><i>Info</i></a>')
 
-    page = template(SITE_TITLE, content, "/", use_katex=False, body_class="home")
+    page = template(SITE_TITLE_TEXT, content, "/", use_katex=False, body_class="home")
     # custom footer for homepage
     footer_html = "\n        ".join(footer_links)
     page = page.replace(
