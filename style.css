@@ -123,6 +123,13 @@ img {
     margin: var(--lh) 0;
 }
 
+.site-logo {
+    height: 1.5em;
+    width: auto;
+    margin: 0;
+    vertical-align: middle;
+}
+
 code {
     background: #e5e5e5;
     padding: .1em .3em;

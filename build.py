@@ -20,7 +20,7 @@ SRC = ROOT / "src"
 POSTS_DIR = ROOT / "posts"
 KREADS_SRC = ROOT / "src" / "kreads"
 INFO_KREADS_DIR = ROOT / "info" / "kreads"
-SITE_TITLE = '<img src="/maple_leaf.png" alt="Maple leaf" style="height:1.2em;vertical-align:middle">'
+SITE_TITLE = '<img src="/maple_leaf.png" alt="Maple leaf" class="site-logo">'
 SITE_TITLE_TEXT = "🍁"
 
 KATEX_HEAD = (
