@@ -2,3 +2,5 @@
 > Posting to your blog should be as easy as posting to social media.
 
 I write Markdown files in `src/`, run a single Python script to generate static HTML, and push to GitHub. Simple and dependency-free.
+
+August-(2026) 1200-1600
