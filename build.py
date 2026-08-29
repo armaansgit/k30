@@ -253,7 +253,22 @@ def build_kreads_indexes(books):
     links = "\n".join(
         f'        <a href="/info/kreads/{book_slug}/"><i>{book_slug}</i></a><br>' for book_slug in books.keys()
     )
-    content = f"        <h1>kreads</h1>\n        <p>-</p>\n{links}"
+    content = f"""        <h1>kreads</h1>
+        <p>-</p>
+        
+        <p>Reading List</p>
+        Stray Reflections (1910) [x]<br>
+        <br>
+        
+        <p>Book Notes</p>
+{links}
+        <br>
+        
+        <p>Favorite Authors</p>
+        <i>Allama Iqbal</i><br>
+        <i>Georg Wilhelm Friedrich Hegel</i><br>
+        <i>Johann Wolfgang von Goethe</i><br>
+        <i>Friedrich Nietzsche</i><br>"""
     page = template("kreads", content, "/info/", use_katex=False)
     (INFO_KREADS_DIR / "index.html").write_text(page, encoding="utf-8")
 
