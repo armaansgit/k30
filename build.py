@@ -249,26 +249,32 @@ def build_kreads_indexes(books):
         book_out.mkdir(parents=True, exist_ok=True)
         (book_out / "index.html").write_text(page, encoding="utf-8")
         
-    # 2. Build root kreads index (listing books)
-    links = "\n".join(
-        f'        <a href="/info/kreads/{book_slug}/"><i>{book_slug}</i></a><br>' for book_slug in books.keys()
-    )
-    content = f"""        <h1>kreads</h1>
+    # 2. Build Reading List page (/info/kreads/reading-list/)
+    reading_list_content = """        <h1>Reading List</h1>
         <p>-</p>
-        
-        <p>Reading List</p>
-        Stray Reflections (1910) [x]<br>
-        <br>
-        
-        <p>Book Notes</p>
-{links}
-        <br>
-        
-        <p>Favorite Authors</p>
+        <a href="/info/kreads/Stray Reflections (1910)/">[x] <i>Stray Reflections (1910)</i></a><br>"""
+    rl_page = template("Reading List", reading_list_content, "/info/kreads/", use_katex=False)
+    rl_dir = INFO_KREADS_DIR / "reading-list"
+    rl_dir.mkdir(parents=True, exist_ok=True)
+    (rl_dir / "index.html").write_text(rl_page, encoding="utf-8")
+
+    # 3. Build My preeminent philosophical influence page (/info/kreads/my-preeminent-philosophical-influence/)
+    authors_content = """        <h1>My preeminent philosophical influence</h1>
+        <p>-</p>
         <i>Allama Iqbal</i><br>
         <i>Georg Wilhelm Friedrich Hegel</i><br>
         <i>Johann Wolfgang von Goethe</i><br>
         <i>Friedrich Nietzsche</i><br>"""
+    authors_page = template("My preeminent philosophical influence", authors_content, "/info/kreads/", use_katex=False)
+    authors_dir = INFO_KREADS_DIR / "my-preeminent-philosophical-influence"
+    authors_dir.mkdir(parents=True, exist_ok=True)
+    (authors_dir / "index.html").write_text(authors_page, encoding="utf-8")
+
+    # 4. Build root kreads index (listing directory links)
+    content = f"""        <h1>kreads</h1>
+        <p>-</p>
+        <a href="/info/kreads/reading-list/"><i>Reading List</i></a><br>
+        <a href="/info/kreads/my-preeminent-philosophical-influence/"><i>My preeminent philosophical influence</i></a><br>"""
     page = template("kreads", content, "/info/", use_katex=False)
     (INFO_KREADS_DIR / "index.html").write_text(page, encoding="utf-8")
 
