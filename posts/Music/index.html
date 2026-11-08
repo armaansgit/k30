@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Music or No music?</title>
-    <link rel="stylesheet" href="/style.css?v=1794134312">
+    <link rel="stylesheet" href="/style.css?v=1794134543">
 </head>
 <body class="">
     <main>
@@ -19,10 +19,14 @@ Classical may work.</p>
     </footer>
     <script>
         const patterns = ['mor_0702.jpg', 'mor_0411.jpg', 'mor_1208.jpg', 'mor_1114.jpg', 'mor_0912.jpg', 'ind_0215.jpg', 'ind_0235.jpg', 'ind_0417.jpg', 'ind_0415.jpg', 'isl_0101.jpg', 'isl_0202.jpg', 'isl_0303.jpg', 'rom_0101.jpg', 'rom_0202.jpg', 'rom_0303.jpg', 'rom_0404.jpg', 'rom_0505.jpg', 'arc_0101.jpg'];
-        const randomPattern = patterns[Math.floor(Math.random() * patterns.length)];
+        const navType = performance.getEntriesByType('navigation')[0]?.type;
+        const isReload = navType === 'reload';
+        const chosenPattern = isReload
+            ? patterns[Math.floor(Math.random() * patterns.length)]
+            : 'rom_0303.jpg';
         const sidePatternEl = document.getElementById('home-image');
         if (sidePatternEl) {
-            sidePatternEl.style.backgroundImage = "url('/" + randomPattern + "')";
+            sidePatternEl.style.backgroundImage = "url('/" + chosenPattern + "')";
         }
         
         function updateClock() {
