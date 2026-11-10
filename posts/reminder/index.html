@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Reminder</title>
+    <link rel="stylesheet" href="/style.css?v=1794339936">
+</head>
+<body class="">
+    <main>
+        <h1><em>Reminder</em></h1>
+<p>Life is really really short </p>
+<p><img alt="Reminder" src="reminders.jpg" /></p>
+    </main>
+    <footer>
+        <a href="/posts/"><i>../</i></a>
+        <div id="clock-container"></div>
+    </footer>
+    <script>
+        const patterns = ['mor_0702.jpg', 'mor_0411.jpg', 'mor_1208.jpg', 'mor_1114.jpg', 'mor_0912.jpg', 'ind_0215.jpg', 'ind_0235.jpg', 'ind_0417.jpg', 'ind_0415.jpg', 'isl_0101.jpg', 'isl_0202.jpg', 'isl_0303.jpg', 'rom_0101.jpg', 'rom_0202.jpg', 'rom_0303.jpg', 'rom_0404.jpg', 'rom_0505.jpg', 'arc_0101.jpg'];
+        const navType = performance.getEntriesByType('navigation')[0]?.type;
+        const isReload = navType === 'reload';
+        const chosenPattern = isReload
+            ? patterns[Math.floor(Math.random() * patterns.length)]
+            : 'rom_0303.jpg';
+        const sidePatternEl = document.getElementById('home-image');
+        if (sidePatternEl) {
+            sidePatternEl.style.backgroundImage = "url('/" + chosenPattern + "')";
+        }
+        
+        function updateClock() {
+            const timeStr = new Date().toLocaleTimeString('en-US');
+            const el = document.getElementById('clock-container');
+            if (el) el.innerText = timeStr;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
