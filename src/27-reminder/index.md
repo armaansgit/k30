@@ -2,4 +2,4 @@
 
 Life is really really short 
 
-![Reminder](reminders.jpg)
+![Reminder](/posts/reminder/reminders.jpg)
